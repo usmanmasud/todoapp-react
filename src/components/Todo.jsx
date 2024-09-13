@@ -1,4 +1,5 @@
 import { useState } from "react"
+import TodoItem from "./TodoItem";
 
 export default function Todo() {
     const [todo, setTodo] = useState('');
@@ -15,7 +16,7 @@ export default function Todo() {
                 <input type="text" value={todo} onChange={(e) => setTodo(e.target.value)} />
                 <button type="submit">Submit</button>
             </form>
-            {todos.map(item => <h3>{item}</h3>)}
+            {todos.map(item => <TodoItem key={item} item={item} />)}
         </div>
     )
 }
